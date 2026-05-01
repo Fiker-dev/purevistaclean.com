@@ -1016,6 +1016,15 @@
           <input type="date" id="date">
         </div>
         <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <select id="time">
+            <option value="">Select time...</option>
+            <option>Morning (8 AM - 12 PM)</option>
+            <option>Afternoon (12 PM - 4 PM)</option>
+            <option>Evening (4 PM - 8 PM)</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="roommates">Number of Roommates</label>
           <select id="roommates">
             <option>Just me</option>
@@ -1026,7 +1035,7 @@
         </div>
         <div class="form-group full">
           <label for="notes">Anything else we should know?</label>
-          <textarea id="notes" placeholder="e.g. leaving May 8th at noon, bathroom needs extra attention..."></textarea>
+          <textarea id="notes" placeholder="e.g. leaving May 8th, bathroom needs extra attention..."></textarea>
         </div>
       </div>
 
@@ -1676,6 +1685,7 @@ async function submitForm(e) {
   const dorm    = document.getElementById('dorm').value;
   const service = document.getElementById('service').value;
   const date    = document.getElementById('date').value;
+  const time    = document.getElementById('time').value;
   const rooms   = document.getElementById('roommates').value;
   const notes   = document.getElementById('notes').value.trim();
 
@@ -1707,6 +1717,7 @@ async function submitForm(e) {
         dorm:    dorm    || 'Not selected',
         service: service || 'Not selected',
         preferred_date: date || 'Flexible',
+        preferred_time: time || 'Flexible',
         roommates: rooms,
         notes: notes || 'None',
         _subject: `New booking request from ${fname} — The Vista Clean`
