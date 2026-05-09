@@ -479,6 +479,110 @@
     font-size: 0.82rem;
     white-space: nowrap;
   }
+  .pkg-x {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--red-light);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem;
+    color: var(--red);
+    font-weight: 800;
+  }
+  .pkg-excludes li { color: var(--muted); }
+  .pkg-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 12px 0 6px;
+    font-style: italic;
+  }
+  .pkg-sublabel {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pkg-best {
+    font-size: 0.78rem;
+    color: var(--green-dark);
+    font-weight: 700;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--green-light);
+  }
+  .pkg-card.featured .pkg-best {
+    color: rgba(255,255,255,0.6);
+    border-top-color: rgba(255,255,255,0.15);
+  }
+  .pkg-size-table {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .pkg-size-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .pkg-size-row:last-child { border-bottom: none; }
+  .pkg-size-row span:last-child { font-weight: 800; color: var(--yellow); }
+  .peak-note {
+    margin-top: 28px;
+    padding: 20px 24px;
+    background: white;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--green-light);
+  }
+  .peak-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--green-dark);
+    background: var(--green-light);
+    padding: 4px 12px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .policy-note {
+    margin-top: 20px;
+    padding: 18px 24px;
+    background: white;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--green-light);
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .pack-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 32px;
+    border: 2px solid var(--green-light);
+    margin-top: 14px;
+  }
+  .pack-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 20px;
+  }
+  @media (max-width: 640px) { .pack-body { grid-template-columns: 1fr; } }
+  .bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .pkg-card.bundle { border-color: #FFE99A; }
+  .pkg-card.bundle:hover { box-shadow: 0 14px 40px rgba(255,212,59,0.18); }
+  .pkg-price.yellow { background: #FFF8D6; color: #9A6C00; }
 
   /* ── FORM ── */
   #book {
@@ -930,55 +1034,201 @@
   <div class="section-tag reveal">Services & Pricing</div>
   <h2 class="section-title reveal">Pick the clean that fits the move</h2>
 
-
   <div class="pkg-grid">
+
+    <!-- STARTER CLEAN -->
     <div class="pkg-card reveal">
-      <span class="pkg-icon">🧽</span>
-      <h3 class="pkg-name-light">Standard Student Clean</h3>
-      <span class="pkg-price">Starting at $120</span>
-      <p class="pkg-desc">A practical reset for student apartments, dorms, and shared spaces that need a clean baseline.</p>
+      <span class="pkg-icon">🧹</span>
+      <h3 class="pkg-name-light">Starter Clean</h3>
+      <span class="pkg-price">Starting at $100</span>
+      <p class="pkg-desc">Studio / 1-Bed only. A 90-minute professional refresh for apartments that are already relatively tidy.</p>
       <ul class="pkg-list">
-        <li><span class="pkg-check">✓</span> Bedrooms, bathroom & kitchen surfaces</li>
-        <li><span class="pkg-check">✓</span> Floors, trash, dusting & wipe-downs</li>
-        <li><span class="pkg-check">✓</span> Ideal for routine student apartment cleaning</li>
+        <li><span class="pkg-check">✓</span> Bathroom wipe-down</li>
+        <li><span class="pkg-check">✓</span> Kitchen wipe-down</li>
+        <li><span class="pkg-check">✓</span> Vacuuming & mopping</li>
+        <li><span class="pkg-check">✓</span> Dusting & trash removal</li>
       </ul>
+      <p class="pkg-note">Photos required before booking approval.</p>
+      <p class="pkg-sublabel">Does not include</p>
+      <ul class="pkg-list pkg-excludes">
+        <li><span class="pkg-x">✕</span> Appliances or heavy scrubbing</li>
+        <li><span class="pkg-x">✕</span> Excessive trash, deep cleaning, or smoke odor</li>
+      </ul>
+      <p class="pkg-best">Best for light-maintenance apartments & tidy student units</p>
     </div>
 
-    <div class="pkg-card featured reveal reveal-delay-1">
-      <div class="pkg-badge">Most Requested</div>
-      <span class="pkg-icon">✨</span>
-      <h3>Move-Out / Move-In Clean</h3>
-      <span class="pkg-price">Starting at $220</span>
-      <p class="pkg-desc">The deposit-minded clean for end-of-lease, move-in day, parent visits, and property turnover.</p>
-      <ul class="pkg-list">
-        <li><span class="pkg-check">✓</span> Full kitchen, bathroom & living area deep clean</li>
-        <li><span class="pkg-check">✓</span> Appliance, cabinet & wall spot options</li>
-        <li><span class="pkg-check">✓</span> Built for student rentals and property managers</li>
-      </ul>
-    </div>
-
-    <div class="pkg-card reveal reveal-delay-2">
+    <!-- DEEP CLEAN -->
+    <div class="pkg-card reveal reveal-delay-1">
       <span class="pkg-icon">🫧</span>
       <h3 class="pkg-name-light">Deep Clean</h3>
       <span class="pkg-price">Starting at $180</span>
-      <p class="pkg-desc">A heavier clean for bathrooms, kitchens, neglected corners, and high-traffic student spaces.</p>
+      <p class="pkg-desc">Heavier bathroom and kitchen scrubbing, grease removal, sanitization, and detailed cleaning.</p>
       <ul class="pkg-list">
-        <li><span class="pkg-check">✓</span> Bathroom sanitation & kitchen detail</li>
-        <li><span class="pkg-check">✓</span> Baseboards, high-touch points & microwave</li>
-        <li><span class="pkg-check">✓</span> Good before breaks, returns, and inspections</li>
+        <li><span class="pkg-check">✓</span> Detailed bathroom scrubbing</li>
+        <li><span class="pkg-check">✓</span> Kitchen degreasing</li>
+        <li><span class="pkg-check">✓</span> Floor cleaning & dusting</li>
+        <li><span class="pkg-check">✓</span> Sanitization & detailed surface cleaning</li>
       </ul>
+      <p class="pkg-best">Best for buildup, neglected kitchens/bathrooms & pre-event cleaning</p>
+    </div>
+
+    <!-- MOVE-OUT CLEAN -->
+    <div class="pkg-card featured reveal reveal-delay-2">
+      <div class="pkg-badge">Most Requested</div>
+      <span class="pkg-icon">✨</span>
+      <h3>Move-Out Clean</h3>
+      <span class="pkg-price">Starting at $240</span>
+      <p class="pkg-desc">Full inspection-ready turnover cleaning designed to help maximize your deposit return.</p>
+      <ul class="pkg-list">
+        <li><span class="pkg-check">✓</span> Bathrooms, floors & appliances</li>
+        <li><span class="pkg-check">✓</span> Cabinets & wall spot cleaning</li>
+        <li><span class="pkg-check">✓</span> Detailed kitchen, vacuuming & mopping</li>
+        <li><span class="pkg-check">✓</span> Trash removal</li>
+      </ul>
+      <div class="pkg-size-table">
+        <div class="pkg-size-row"><span>Studio / 1 Bed</span><span>$240</span></div>
+        <div class="pkg-size-row"><span>2 Bedroom</span><span>$340</span></div>
+        <div class="pkg-size-row"><span>3 Bedroom</span><span>$460</span></div>
+        <div class="pkg-size-row"><span>4 Bedroom</span><span>$560</span></div>
+      </div>
+      <p class="pkg-best">Best for end-of-lease, inspections & deposit recovery</p>
+    </div>
+
+  </div>
+
+  <!-- PACKING ASSISTANCE -->
+  <div class="section-tag reveal" style="margin-top:36px;">Packing Assistance</div>
+  <div class="pack-card reveal">
+    <div style="display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+      <span class="pkg-icon" style="margin-bottom:0;">📦</span>
+      <div>
+        <h3 class="pkg-name-light" style="font-size:1.3rem;">Packing Assistance</h3>
+        <span class="pkg-price" style="margin-top:8px; display:inline-flex;">Starting at $40/hour</span>
+        <p class="pkg-desc" style="max-width:540px; margin-top:10px;">Optional move assistance designed to help students organize and prepare for move-out. Customer must provide boxes and packing materials unless otherwise arranged.</p>
+      </div>
+    </div>
+    <div class="pack-body">
+      <div>
+        <p class="pkg-sublabel">Includes</p>
+        <ul class="pkg-list">
+          <li><span class="pkg-check">✓</span> Organizing belongings</li>
+          <li><span class="pkg-check">✓</span> Boxing non-fragile items</li>
+          <li><span class="pkg-check">✓</span> Labeling boxes</li>
+          <li><span class="pkg-check">✓</span> Light move-out organization</li>
+          <li><span class="pkg-check">✓</span> Basic packing & light moving inside apartment</li>
+        </ul>
+        <p class="pkg-sublabel" style="margin-top:16px;">Best for</p>
+        <ul class="pkg-list">
+          <li><span class="pkg-check">✓</span> Busy students & last-minute move-outs</li>
+          <li><span class="pkg-check">✓</span> Parents helping students move</li>
+          <li><span class="pkg-check">✓</span> Apartment organization before cleaning</li>
+        </ul>
+      </div>
+      <div>
+        <p class="pkg-sublabel">Does not include</p>
+        <ul class="pkg-list pkg-excludes">
+          <li><span class="pkg-x">✕</span> Moving truck or transportation</li>
+          <li><span class="pkg-x">✕</span> Heavy furniture moving</li>
+          <li><span class="pkg-x">✕</span> Unpacking services</li>
+          <li><span class="pkg-x">✕</span> Fragile or high-value item handling</li>
+          <li><span class="pkg-x">✕</span> Disposal of personal belongings</li>
+        </ul>
+      </div>
     </div>
   </div>
 
+  <!-- MOVE-OUT BUNDLE PACKAGES -->
+  <div class="section-tag reveal" style="margin-top:36px;">Move-Out Bundle Packages</div>
+  <div class="bundle-grid reveal">
+
+    <div class="pkg-card bundle">
+      <div class="pkg-badge">Bundle & Save</div>
+      <span class="pkg-icon">🏠</span>
+      <h3 class="pkg-name-light">Clean & Pack Bundle</h3>
+      <span class="pkg-price yellow">Starting at $320</span>
+      <ul class="pkg-list">
+        <li><span class="pkg-check">✓</span> Move-Out Clean</li>
+        <li><span class="pkg-check">✓</span> Up to 2 hours packing assistance</li>
+        <li><span class="pkg-check">✓</span> Trash removal</li>
+        <li><span class="pkg-check">✓</span> Apartment organization support</li>
+      </ul>
+      <p class="pkg-best">Best for solo move-outs needing clean & pack help</p>
+    </div>
+
+    <div class="pkg-card bundle">
+      <div class="pkg-badge">Best for Roommates</div>
+      <span class="pkg-icon">👥</span>
+      <h3 class="pkg-name-light">Roommate Move-Out Bundle</h3>
+      <span class="pkg-price yellow">Starting at $520</span>
+      <p class="pkg-desc">Perfect for shared student apartments.</p>
+      <ul class="pkg-list">
+        <li><span class="pkg-check">✓</span> Full Move-Out Clean</li>
+        <li><span class="pkg-check">✓</span> Up to 3 hours packing assistance</li>
+        <li><span class="pkg-check">✓</span> Common area organization</li>
+        <li><span class="pkg-check">✓</span> Trash removal</li>
+        <li><span class="pkg-check">✓</span> Roommate split pricing available</li>
+      </ul>
+      <p class="pkg-best">Best for 2–4 bedroom shared apartments</p>
+    </div>
+
+    <div class="pkg-card bundle">
+      <div class="pkg-badge">Finals Week</div>
+      <span class="pkg-icon">📚</span>
+      <h3 class="pkg-name-light">Finals Week Express Bundle</h3>
+      <span class="pkg-price yellow">Starting at $420</span>
+      <p class="pkg-desc">Designed for students moving out during finals week.</p>
+      <ul class="pkg-list">
+        <li><span class="pkg-check">✓</span> Priority scheduling</li>
+        <li><span class="pkg-check">✓</span> Move-Out Clean</li>
+        <li><span class="pkg-check">✓</span> Up to 2 hours packing assistance</li>
+        <li><span class="pkg-check">✓</span> Same-week availability when possible</li>
+      </ul>
+      <p class="pkg-best">Best for students moving during finals</p>
+    </div>
+
+  </div>
+
+  <!-- ROOMMATE SPLIT -->
+  <div class="reveal" style="margin-top:28px;">
+    <div class="section-tag" style="margin-bottom:14px;">Roommate Split Pricing</div>
+    <div class="addon-grid">
+      <div class="addon-pill">2 Bed Move-Out <span>$340 · $170/ea</span></div>
+      <div class="addon-pill">3 Bed Move-Out <span>$460 · ~$153/ea</span></div>
+      <div class="addon-pill">4 Bed Move-Out <span>$560 · $140/ea</span></div>
+    </div>
+  </div>
+
+  <!-- ADD-ONS -->
   <div class="section-tag reveal" style="margin-top:34px;">Add-Ons</div>
   <div class="addon-grid reveal">
-    <div class="addon-pill">Fridge cleaning <span>$25</span></div>
-    <div class="addon-pill">Oven cleaning <span>$30</span></div>
-    <div class="addon-pill">Inside cabinets <span>$25</span></div>
-    <div class="addon-pill">Carpet shampoo <span>$40/room</span></div>
-    <div class="addon-pill">Trash removal <span>$15</span></div>
-    <div class="addon-pill">Pet hair removal <span>$15</span></div>
+    <div class="addon-pill">Inside Fridge <span>+$25</span></div>
+    <div class="addon-pill">Inside Oven <span>+$40</span></div>
+    <div class="addon-pill">Inside Cabinets <span>+$25</span></div>
+    <div class="addon-pill">Balcony Cleaning <span>+$25</span></div>
+    <div class="addon-pill">Carpet Spot Treatment <span>+$30</span></div>
+    <div class="addon-pill">Trash Removal <span>+$30+</span></div>
+    <div class="addon-pill">Wall Spot Cleaning <span>+$25</span></div>
+    <div class="addon-pill">Pet Hair Removal <span>+$30</span></div>
+    <div class="addon-pill">Smoke Odor Treatment <span>+$50+</span></div>
+    <div class="addon-pill">Same-Day Emergency <span>+$50</span></div>
   </div>
+
+  <!-- PEAK SEASON -->
+  <div class="peak-note reveal">
+    <span class="peak-label">Peak Season Pricing — May & August</span>
+    <div class="addon-grid">
+      <div class="addon-pill">Studio / 1 Bed <span>$280</span></div>
+      <div class="addon-pill">2 Bedroom <span>$390</span></div>
+      <div class="addon-pill">3 Bedroom <span>$520</span></div>
+      <div class="addon-pill">4 Bedroom <span>$650</span></div>
+    </div>
+  </div>
+
+  <!-- POLICIES -->
+  <div class="policy-note reveal">
+    Final pricing depends on apartment size, condition, and required labor. Pricing may increase for excessive dirtiness, heavy grease, smoke odor, excessive trash, or pet hair. Peak season bookings require a $50 non-refundable deposit via Zelle, Venmo, or Cash App. Cancellations within 24 hours may forfeit deposit. Running water and electricity must be available during service. <strong>Packing services:</strong> The Vista Clean is not responsible for damage to fragile, valuable, or improperly packed items. Packing services are billed hourly and may require a minimum booking time during peak move-out season.
+  </div>
+
 </section>
 
 <!-- BOOK FORM -->
@@ -1044,11 +1294,15 @@
           <label for="service">Service Type</label>
           <select id="service">
             <option value="">Select service...</option>
-            <option>Standard Student Clean</option>
+            <option>Starter Clean</option>
             <option>Deep Clean</option>
-            <option>Move-Out / Move-In Clean</option>
-            <option>Add-on service</option>
-            <option>Not sure let Jerry recommend</option>
+            <option>Move-Out Clean</option>
+            <option>Packing Assistance</option>
+            <option>Clean & Pack Bundle</option>
+            <option>Roommate Move-Out Bundle</option>
+            <option>Finals Week Express Bundle</option>
+            <option>Add-on only</option>
+            <option>Not sure — let Jerry recommend</option>
           </select>
         </div>
         <div class="form-group">
